@@ -7,7 +7,7 @@
 <body>
 <p>メールアドレスを入力してください</p>
 <form action="post.php" method="post">
-<input type="text" size="50" name="mail"><br>
+<input type="email" size="50" name="mail"><br>
 <input type="submit" value="送信">
 </form>
 </body>
