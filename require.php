@@ -1,1 +1,4 @@
-<?php include('./post.php'); ?>
+<?php
+require('./post.php');
+echo 'Hello, World.';
+?>
