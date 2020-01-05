@@ -1,6 +1,10 @@
 <?php
 $mail = $_POST['mail'];
-$result = 'メールアドレスは' . $mail . 'です。';
+if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+	$result = 'メールアドレスは' . $mail . 'です。';
+} else {
+	$result = 'メールアドレスではありません';
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
