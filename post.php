@@ -15,7 +15,7 @@ if (preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\.
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>表示</title>
+<title>表示v1.0</title>
 </head>
 <body>
 <p>filter_varによれば<?php echo $result_filter; ?></p>
