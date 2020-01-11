@@ -1,9 +1,14 @@
 <?php
 $mail = $_POST['mail'];
 if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-	$result = 'メールアドレスは' . $mail . 'です。';
+	$result_filter = 'メールアドレスは' . $mail . 'です。';
 } else {
-	$result = 'メールアドレスではありません';
+	$result_filter = 'メールアドレスではありません';
+}
+if (preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail)) {
+	$result_pregmatch = 'メールアドレスは' . $mail . 'です。';
+} else {
+	$result_pregmatch = 'メールアドレスではありません';
 }
 ?>
 <!DOCTYPE html>
@@ -13,6 +18,7 @@ if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 <title>表示</title>
 </head>
 <body>
-<p><?php echo $result; ?></p>
+<p>filter_varによれば<?php echo $result_filter; ?></p>
+<p>正規表現によれば<?php echo $result_pregmatch; ?></p>
 </body>
 </html>
